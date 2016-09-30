@@ -38,7 +38,7 @@
 		short_file = compress(substr(line,39),' ');
 		timestamps = substr(line,1,20); 
 		drop line; 
-		if substr(file_name,75,7) ne "IO_test" then delete;
+		if substr(compress(substr(line,39),' '),1,7) ne "IO_test" then delete;
 	RUN; 
 
 	/*pull all file ID hashes from the log warehouse, but only if the warehouse presently exists.*/
